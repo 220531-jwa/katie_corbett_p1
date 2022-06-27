@@ -13,6 +13,7 @@ public class Requests {
     private String request_justification;
     private int gradeType;
     private int status;
+    private String proof;
 
     public Requests(){
 
@@ -21,7 +22,7 @@ public class Requests {
     public Requests(int request_id, int user_id, String employee_first_name,
                     String employee_last_name, String request_date, String request_time, int trainingType,
                     String description, float request_cost, String request_justification,
-                    int gradeType, int status){
+                    int gradeType, int status, String proof){
         this.request_id = request_id;
         this.user_id = user_id;
         this.employee_first_name = employee_first_name;
@@ -34,6 +35,7 @@ public class Requests {
         this.request_justification = request_justification;
         this.gradeType = gradeType;
         this.status = status;
+        this.proof = proof;
     }
 
     public void setUser_id(int user_id){
@@ -118,5 +120,12 @@ public class Requests {
     }
     public int getStatus(){
         return this.status;
+    }
+
+    public void setProof(String proof){
+        this.proof = proof;
+    }
+    public String getProof(){
+        return this.proof;
     }
 }
