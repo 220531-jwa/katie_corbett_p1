@@ -59,4 +59,50 @@ public class RequestsController {
             ctx.status(404);
         }
     }
+
+    public static void getRequestById(Context ctx){
+        int user_id = Integer.parseInt(ctx.pathParam("user_id"));
+        int request_id = Integer.parseInt(ctx.pathParam("request_id"));
+        Requests r = rs.getRequestById(request_id, user_id);
+        if(r != null){
+            ctx.status(200);
+            ctx.json(r);
+        } else {
+            ctx.status(404);
+        }
+    }
+
+    public static void updateRequestGrade(Context ctx){
+        int user_id = Integer.parseInt(ctx.pathParam("user_id"));
+        int request_id = Integer.parseInt(ctx.pathParam("request_id"));
+        Requests r = ctx.bodyAsClass(Requests.class);
+        String proof = r.getProof();
+        Requests updated = null;
+        try{
+            updated = rs.updateRequestGrade(request_id, user_id, proof);
+            if(updated != null){
+                ctx.status(200);
+                ctx.json(updated);
+            } else {
+                ctx.status(404);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void updateRequestStatus(Context ctx){
+        int user_id = Integer.parseInt(ctx.pathParam("user_id"));
+        int request_id = Integer.parseInt(ctx.pathParam("request_id"));
+        Requests r = ctx.bodyAsClass(Requests.class);
+        int status = r.getStatus();
+        Requests updated = rs.updateRequestStatus(user_id, request_id, status);
+        if(updated != null){
+            ctx.status(200);
+            ctx.json(updated);
+        } else {
+            ctx.status(404);
+        }
+    }
+
 }

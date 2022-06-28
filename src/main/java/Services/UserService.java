@@ -9,13 +9,6 @@ public class UserService {
         this.ud = ud;
     }
 
-    public User getUserById(int user_id){
-        return ud.getUserById(user_id);
-    }
-
-    public User getUserByUsername(String username){
-        return ud.getUserByUsername(username);
-    }
 
     public User loginUser(String username, String pword){
         User u = ud.getUserByUsername(username);

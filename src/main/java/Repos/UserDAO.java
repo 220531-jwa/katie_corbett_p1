@@ -12,7 +12,7 @@ public class UserDAO {
     private static ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
 
     public User getUserById(int user_id){
-        String sql = "select * from ers.users where user_id = ?;";
+        String sql = "select * from users where user_id = ?;";
 
         try(Connection connect = cu.getConnection()){
             PreparedStatement ps = connect.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class UserDAO {
     }
 
     public User getUserByUsername(String username){
-        String sql = "select * from ers.users where username = ?;";
+        String sql = "select * from users where username = ?;";
 
         try(Connection connect = cu.getConnection()){
             PreparedStatement ps = connect.prepareStatement(sql);

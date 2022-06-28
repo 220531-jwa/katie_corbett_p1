@@ -120,4 +120,102 @@ public class RequestsDAO {
         }
         return null;
     }
+
+    public Requests getRequestById(int request_id, int user_id){
+        String sql = "select * from requests where request_id = ? and user_id = ?;";
+
+        try(Connection connect = cu.getConnection()){
+            PreparedStatement ps = connect.prepareStatement(sql);
+            ps.setInt(1, request_id);
+            ps.setInt(2, user_id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Requests( rs.getInt("request_id"),
+                        rs.getInt("user_id"),
+                        rs.getString("employee_first_name"),
+                        rs.getString("employee_last_name"),
+                        rs.getString("request_date"),
+                        rs.getString("request_time"),
+                        rs.getInt("trainingtype"),
+                        rs.getString("description"),
+                        rs.getFloat("request_cost"),
+                        rs.getString("request_justification"),
+                        rs.getInt("gradetype"),
+                        rs.getInt("status"),
+                        rs.getString("proof")
+                );
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Requests updateRequestGrade(int request_id, int user_id, String proof){
+        String sql = "update requests set proof = ? where request_id = ? and user_id = ? returning *;";
+
+        try(Connection connect = cu.getConnection()){
+            PreparedStatement ps = connect.prepareStatement(sql);
+            ps.setString(1, proof);
+            ps.setInt(2, request_id);
+            ps.setInt(3, user_id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Requests( rs.getInt("request_id"),
+                        rs.getInt("user_id"),
+                        rs.getString("employee_first_name"),
+                        rs.getString("employee_last_name"),
+                        rs.getString("request_date"),
+                        rs.getString("request_time"),
+                        rs.getInt("trainingtype"),
+                        rs.getString("description"),
+                        rs.getFloat("request_cost"),
+                        rs.getString("request_justification"),
+                        rs.getInt("gradetype"),
+                        rs.getInt("status"),
+                        rs.getString("proof")
+                );
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Requests updateRequestStatus(int user_id, int request_id, int status){
+        String sql = "update requests set status = ? where user_id = ? and request_id = ? returning *;";
+
+        try(Connection connect = cu.getConnection()){
+            PreparedStatement ps = connect.prepareStatement(sql);
+            ps.setInt(1, status);
+            ps.setInt(2, user_id);
+            ps.setInt(3, request_id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Requests( rs.getInt("request_id"),
+                        rs.getInt("user_id"),
+                        rs.getString("employee_first_name"),
+                        rs.getString("employee_last_name"),
+                        rs.getString("request_date"),
+                        rs.getString("request_time"),
+                        rs.getInt("trainingtype"),
+                        rs.getString("description"),
+                        rs.getFloat("request_cost"),
+                        rs.getString("request_justification"),
+                        rs.getInt("gradetype"),
+                        rs.getInt("status"),
+                        rs.getString("proof")
+                );
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

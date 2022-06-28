@@ -27,4 +27,16 @@ public class RequestsService {
     public List<Requests> getRequestsByUserId(int user_id){
         return rd.getRequestsByUserId(user_id);
     }
+
+    public Requests getRequestById(int request_id, int user_id){
+        return rd.getRequestById(request_id, user_id);
+    }
+
+    public Requests updateRequestGrade(int request_id, int user_id, String proof){
+        return rd.updateRequestGrade(request_id, user_id, proof);
+    }
+
+    public Requests updateRequestStatus(int user_id, int request_id, int status){
+        return rd.updateRequestStatus(user_id, request_id, status);
+    }
 }

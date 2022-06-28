@@ -66,4 +66,44 @@ public class RequestsServiceTests {
         //then
         assertEquals(mock, mockRd.getRequestsByUserId(1));
     }
+
+    @Test
+    public void should_getRequestById(){
+        //given
+        List<Requests> mock = new ArrayList<>();
+        mock.add(new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
+                "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
+                1, 1, "none"));
+        mock.add(new Requests(2, 1, "Beauregard", "Lionett", "6/27/2022", "3:30 PM", 1,
+                "Cobalt Soul Ghost-Punching Class 2", 300, "I need to punch ghosts, duh",
+                1, 1, "none"));
+        //when
+        when(mockRd.getRequestById(1, 1)).thenReturn(mock.get(0));
+        //then
+        assertEquals(mock.get(0), mockRs.getRequestById(1, 1));
+    }
+
+    @Test
+    public void should_updateRequestGrade(){
+        //given
+        Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
+                "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
+                1, 1, "75");
+        //when
+        when(mockRd.updateRequestGrade(1, 1, "75")).thenReturn(mock);
+        //then
+        assertEquals(mock, mockRs.updateRequestGrade(1, 1, "75"));
+    }
+
+    @Test
+    public void should_updateRequestStatus(){
+        //given
+        Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
+                "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
+                1, 5, "75");
+        //when
+        when(mockRd.updateRequestStatus(1, 1, 5)).thenReturn(mock);
+        //then
+        assertEquals(mock, mockRs.updateRequestStatus(1, 1, 5));
+    }
 }

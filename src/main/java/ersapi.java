@@ -6,13 +6,10 @@ import Services.RequestsService;
 import Services.UserService;
 import io.javalin.Javalin;
 
-import java.awt.image.PackedColorModel;
-import static io.javalin.apibuilder.ApiBuilder.*;
+
 import static io.javalin.apibuilder.ApiBuilder.path;
-import static io.javalin.apibuilder.ApiBuilder.delete;
 import static io.javalin.apibuilder.ApiBuilder.get;
-import static io.javalin.apibuilder.ApiBuilder.patch;
-import static io.javalin.apibuilder.ApiBuilder.path;
+
 import static io.javalin.apibuilder.ApiBuilder.post;
 import static io.javalin.apibuilder.ApiBuilder.put;
 
@@ -32,14 +29,24 @@ public class ersapi {
                path("/submit", () -> {
                    post(RequestsController::createRequest);
                });
-               path("/requests/{user_id}", () -> {
-                   get(RequestsController::getRequestsByUserId);
+               path("/requests", () -> {
+                   path("/{user_id}", () -> {
+                       get(RequestsController::getRequestsByUserId);
+                       path("/{request_id}", () -> {
+                           get(RequestsController::getRequestById);
+                           put(RequestsController::updateRequestGrade);
+                       });
+                   });
                });
            });
            path("/financemgr/requests", () -> {
                get(RequestsController::getAllRequests);
                path("/{user_id}", () -> {
                    get(RequestsController::getRequestsByUserId);
+                   path("/{request_id}", () -> {
+                       get(RequestsController::getRequestById);
+                       put(RequestsController::updateRequestStatus);
+                   });
                });
            });
         });
