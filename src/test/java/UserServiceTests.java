@@ -23,7 +23,7 @@ public class UserServiceTests {
     @Test
     public void should_loginUser(){
         //given
-        User mock = new User(1, "beaulionettem9", "thaddeus");
+        User mock = new User(1, "beaulionettem9", "thaddeus", 1);
         //when
         when(mockUd.getUserByUsername("beaulionettem9")).thenReturn(mock);
         //then
@@ -32,7 +32,7 @@ public class UserServiceTests {
     @Test
     public void should_notLoginUserBadUsername(){
         //given
-        User mock = new User(1, "beaulionettem9", "thaddeus");
+        User mock = new User(1, "beaulionettem9", "thaddeus", 1);
         //when
         when(mockUd.getUserByUsername("yashanydoorinm9")).thenReturn(mock);
         //then
@@ -42,7 +42,7 @@ public class UserServiceTests {
     @Test
     public void should_notLoginUserBadPword(){
         //given
-        User mock = new User(1, "beaulionettem9", "thaddeus");
+        User mock = new User(1, "beaulionettem9", "thaddeus", 1);
         //when
         when(mockUd.getUserByUsername("beaulionettem9")).thenReturn(mock);
         //then

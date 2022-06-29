@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Login page - where users log in to ERS
+        -->
+        <meta charset="utf-8" />
+        <title>ERS Login</title>
+        <link rel="stylesheet" href="loginstyles.css">
+        <link rel="stylesheet" href="commonstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>ERS - Employee Reimbursement System</header>
+        <br>
+        <div class="container">
+            <label id="user">
+                <strong>Username:</strong>
+                <input class="form-control" id="uname" type="text" placeholder="username">
+            </label>
+            <br>
+            <br>
+            <label id="pass">
+                <strong>Password:</strong> 
+                <input class="form-control" id="pword" type="password">
+            </label>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="login()"><strong>Login</strong></button>
+        </div>
+        <script src="login.js"></script>
+    </body>
+    <footer>
+        <p>&copy; Katie Corbett 2022</p>
+    </footer>
+</html>

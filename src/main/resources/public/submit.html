@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Employee request submit page
+            Employee can submit requests.
+        -->
+        <link rel="stylesheet" href="commonstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>ERS - Employee Reimbursement System</header>
+        <div id = "request_form">
+            <p><strong>Submit request:</strong></p>
+            <br>
+            <label id="user_id">
+                User ID number:
+                <input class="form-control" id="uid" type="text">
+            </label>
+            <br>
+            <label id="firstname">
+                First name:
+                <input class="form-control" id="fname" type="text">
+            </label>
+            <br>
+            <label id="lastname">
+                Last name: 
+                <input class="form-control" id="lname" type="text">
+            </label>
+            <br>
+            <label id="request_date">
+                Date of request: 
+                <input class="form-control" id="date" type="date">
+            </label>
+            <br>
+            <label id="request_time">
+                Time of request:
+                <input class="form-control" id="time" type="time">
+            </label>
+            <br>
+            <label id="trainingtype">
+                Type of training: 
+                <select id="training">
+                    <option value="1">1 - University Course</option>
+                    <option value="2">2 - Seminar</option>
+                    <option value="3">3 - Certificate Prep Class</option>
+                    <option value="4">4 - Certificate</option>
+                    <option value="5">5 - Technical Training</option>
+                    <option value="6">6 - Other</option>
+                </select>
+            </label>
+            <br>
+            <label id="description">
+                Description of training program: 
+                <input class="form-control" id="desc" type="text">
+            </label>
+            <br>
+            <label id="request_cost">
+                Cost: (No $ before number, please)
+                <input class="form-control" id="cost" type="text">
+            </label>
+            <br>
+            <label id="request_justification">
+                Why is this training necessary/beneficial?:
+                <input class="form-control" id="justify" type="text">
+            </label>
+            <br>
+            <label id="gradetype">
+                How will this training be graded?: 
+                <select id="grade">
+                    <option value="1">1 - Pass/Fail</option>
+                    <option value="2">2 - Minimum grade of 60</option>
+                    <option value="3">3 - Presentation</option>
+                </select>
+            </label>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="submitRequest()">Submit request</button>
+        </div>
+    </body>
+    <script src="employee.js"></script>
+    <footer>
+        <p>&copy; Katie Corbett 2022</p>
+    </footer>
+</html>

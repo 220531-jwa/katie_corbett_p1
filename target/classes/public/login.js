@@ -4,11 +4,11 @@ async function login(){
     console.log("login button pressed");
 
     let uname = document.getElementById('uname').value;
-    let pword = document.getElementById('pword').value;
+    let pass = document.getElementById('pword').value;
 
     let user = {
         username: uname,
-        password: pword
+        pword: pass
     }
 
     console.log(user);
@@ -25,10 +25,18 @@ async function login(){
         }
     );
 
-    let resJson = await res.json().then((resp) => {
-        console.log(resp);
-        window.location.assign("homePagePlaceholder.html");
-    }).catch((error) => {
-        console.log(error);
-    });
+    let resJson = await res.json()
+        .then((resp) => {
+            console.log(resp);
+            if(resp.usertype == 1){
+                window.location.assign("employee.html");
+            } 
+            else if(resp.usertype == 2){
+                window.location.assign("financemgr.html");
+            }
+            
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }

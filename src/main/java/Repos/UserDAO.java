@@ -22,7 +22,8 @@ public class UserDAO {
             if(rs.next()){
                 return new User(rs.getInt("user_id"),
                         rs.getString("username"),
-                        rs.getString("pword"));
+                        rs.getString("pword"),
+                        rs.getInt("usertype"));
             }
         } catch(SQLException e){
             e.printStackTrace();
@@ -41,12 +42,15 @@ public class UserDAO {
             if(rs.next()){
                 return new User(rs.getInt("user_id"),
                         rs.getString("username"),
-                        rs.getString("pword"));
+                        rs.getString("pword"),
+                        rs.getInt("usertype"));
             }
         } catch(SQLException e){
             e.printStackTrace();
         }
         return null;
     }
+
+
 
 }

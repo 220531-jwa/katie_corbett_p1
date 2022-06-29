@@ -1,0 +1,11 @@
+div {
+    font-size: 20px;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: lawngreen;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+}

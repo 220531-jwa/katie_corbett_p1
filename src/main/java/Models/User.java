@@ -4,15 +4,17 @@ public class User {
     private int user_id;
     private String username;
     private String pword;
+    private int usertype;
 
     public User(){
 
     }
 
-    public User(int user_id, String username, String pword){
+    public User(int user_id, String username, String pword, int usertype){
         this.user_id = user_id;
         this.username = username;
         this.pword = pword;
+        this.usertype = usertype;
     }
 
 //    public void setUser_id(int user_id){
@@ -34,5 +36,9 @@ public class User {
 //    }
     public String getPword(){
         return this.pword;
+    }
+
+    public int getUsertype(){
+        return this.usertype;
     }
 }
