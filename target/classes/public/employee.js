@@ -43,9 +43,11 @@ async function submitRequest(){
     let resJson = await res.json()
         .then((resp) => {
             console.log(resp);
+            window.location.assign("requestSubmit.html");
         })
         .catch((error) => {
             console.log(error);
+            window.location.assign("requestNotSubmit.html");
         });
 }
 async function createTable(){

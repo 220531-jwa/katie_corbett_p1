@@ -1,3 +1,6 @@
+#ignore credentials
+connection.properties
+
 # Compiled class file
 *.class
 

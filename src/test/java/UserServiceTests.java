@@ -1,6 +1,6 @@
-import Models.User;
-import Repos.UserDAO;
-import Services.UserService;
+import dev.corbett.Models.User;
+import dev.corbett.Repos.UserDAO;
+import dev.corbett.Services.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

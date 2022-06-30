@@ -43,11 +43,21 @@ async function submitRequest(){
     let resJson = await res.json()
         .then((resp) => {
             console.log(resp);
+            window.location.assign("requestSubmit.html");
         })
         .catch((error) => {
             console.log(error);
+            window.location.assign("requestNotSubmit.html");
         });
 }
+
+function resubmitRequest(){
+    window.location.assign("submit.html");
+}
+function backToHp(){
+    window.location.assign("employee.html");
+}
+
 async function createTable(){
     let location = document.getElementById("requestTable");
     

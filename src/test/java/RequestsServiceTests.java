@@ -1,6 +1,6 @@
-import Models.Requests;
-import Repos.RequestsDAO;
-import Services.RequestsService;
+import dev.corbett.Models.Requests;
+import dev.corbett.Repos.RequestsDAO;
+import dev.corbett.Services.RequestsService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

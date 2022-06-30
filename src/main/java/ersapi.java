@@ -1,9 +1,9 @@
-import Controllers.RequestsController;
-import Controllers.UserController;
-import Repos.RequestsDAO;
-import Repos.UserDAO;
-import Services.RequestsService;
-import Services.UserService;
+import dev.corbett.Controllers.RequestsController;
+import dev.corbett.Controllers.UserController;
+import dev.corbett.Repos.RequestsDAO;
+import dev.corbett.Repos.UserDAO;
+import dev.corbett.Services.RequestsService;
+import dev.corbett.Services.UserService;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 
