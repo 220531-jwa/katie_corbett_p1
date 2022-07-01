@@ -14,6 +14,7 @@ public class Requests {
     private int gradeType;
     private int status;
     private String proof;
+    private float reimburseamt;
 
     public Requests(){
 
@@ -22,7 +23,7 @@ public class Requests {
     public Requests(int request_id, int user_id, String employee_first_name,
                     String employee_last_name, String request_date, String request_time, int trainingType,
                     String description, float request_cost, String request_justification,
-                    int gradeType, int status, String proof){
+                    int gradeType, int status, String proof, float reimburseamt){
         this.request_id = request_id;
         this.user_id = user_id;
         this.employee_first_name = employee_first_name;
@@ -36,6 +37,7 @@ public class Requests {
         this.gradeType = gradeType;
         this.status = status;
         this.proof = proof;
+        this.reimburseamt = reimburseamt;
     }
 
 //    public void setUser_id(int user_id){
@@ -48,9 +50,9 @@ public class Requests {
 //    public void setRequest_id(int request_id){
 //        this.request_id = request_id;
 //    }
-//    public int getRequest_id(){
-//        return this.request_id;
-//    }
+    public int getRequest_id(){
+        return this.request_id;
+    }
 
 //    public void setEmployee_first_name(String employee_first_name){
 //        this.employee_first_name = employee_first_name;
@@ -127,5 +129,12 @@ public class Requests {
 //    }
     public String getProof(){
         return this.proof;
+    }
+
+    public void setReimburseamt(float reimburseamt){
+        this.reimburseamt = reimburseamt;
+    }
+    public float getReimburseamt(){
+        return this.reimburseamt;
     }
 }

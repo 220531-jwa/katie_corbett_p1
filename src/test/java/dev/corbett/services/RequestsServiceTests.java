@@ -1,8 +1,11 @@
+package dev.corbett.services;
+
 import dev.corbett.Models.Requests;
 import dev.corbett.Repos.RequestsDAO;
 import dev.corbett.Services.RequestsService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.platform.suite.api.Suite;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -13,6 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+@Suite
 @ExtendWith(MockitoExtension.class)
 public class RequestsServiceTests {
     @InjectMocks
@@ -26,7 +30,7 @@ public class RequestsServiceTests {
         //given
         Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 1, "none");
+                1, 1, "none", 0);
         //when
         when(mockRd.createRequest(1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
@@ -43,8 +47,10 @@ public class RequestsServiceTests {
         List<Requests> mock = new ArrayList<>();
         mock.add(new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 1, "none"));
-        mock.add(new Requests(2, 2, "Yasha", "Nydoorin", "6/27/2022", "3:52 PM", 1, "Stormlord Self Confidence Class", 250, "Stormlord called me", 1, 1, "none"));
+                1, 1, "none", 0));
+        mock.add(new Requests(2, 2, "Yasha", "Nydoorin", "6/27/2022", "3:52 PM",
+                1, "Stormlord Self Confidence Class", 250, "Stormlord called me",
+                1, 1, "none", 0));
         //when
         when(mockRd.getAllRequests()).thenReturn(mock);
         //then
@@ -57,10 +63,10 @@ public class RequestsServiceTests {
         List<Requests> mock = new ArrayList<>();
         mock.add(new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 1, "none"));
+                1, 1, "none", 0));
         mock.add(new Requests(2, 1, "Beauregard", "Lionett", "6/27/2022", "3:30 PM", 1,
                 "Cobalt Soul Ghost-Punching Class 2", 300, "I need to punch ghosts, duh",
-                1, 1, "none"));
+                1, 1, "none", 0));
         //when
         when(mockRd.getRequestsByUserId(1)).thenReturn(mock);
         //then
@@ -73,10 +79,10 @@ public class RequestsServiceTests {
         List<Requests> mock = new ArrayList<>();
         mock.add(new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 1, "none"));
+                1, 1, "none", 0));
         mock.add(new Requests(2, 1, "Beauregard", "Lionett", "6/27/2022", "3:30 PM", 1,
                 "Cobalt Soul Ghost-Punching Class 2", 300, "I need to punch ghosts, duh",
-                1, 1, "none"));
+                1, 1, "none", 0));
         //when
         when(mockRd.getRequestById(1, 1)).thenReturn(mock.get(0));
         //then
@@ -88,7 +94,7 @@ public class RequestsServiceTests {
         //given
         Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 1, "75");
+                1, 1, "75", 0);
         //when
         when(mockRd.updateRequestGrade(1, 1, "75")).thenReturn(mock);
         //then
@@ -100,10 +106,22 @@ public class RequestsServiceTests {
         //given
         Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
                 "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
-                1, 5, "75");
+                1, 5, "75", 0);
         //when
         when(mockRd.updateRequestStatus(1, 1, 5)).thenReturn(mock);
         //then
         assertEquals(mock, mockRs.updateRequestStatus(1, 1, 5));
+    }
+
+    @Test
+    public void should_setReimburseAmt(){
+        //given
+        Requests mock = new Requests(1, 1, "Beauregard", "Lionett", "6/27/2022", "3:14 PM", 1,
+                "Cobalt Soul Ghost-Punching Class", 300, "I need to punch ghosts, duh",
+                1, 5, "75", 240);
+        //when
+        when(mockRd.setReimburseAmt(240, 1, 1)).thenReturn(mock);
+        //then
+        assertEquals(mock, mockRs.setReimburseAmt(240, 1, 1));
     }
 }

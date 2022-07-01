@@ -29,6 +29,7 @@ async function login(){
         .then((resp) => {
             console.log(resp);
             if(resp.usertype == 1){
+                sessionStorage.setItem("user", JSON.stringify(resp));
                 window.location.assign("employee.html");
             } 
             else if(resp.usertype == 2){

@@ -30,22 +30,3 @@ footer {
     color:white;
 }
 
-nav {
-    font-family: 'Bree Serif', serif;
-    background-color: darkolivegreen;
-    text-align: center;
-    border-color: black;
-    border-style: double;
-    border-width: 10px;
-}
-
-nav > p {
-    font-size: 20px;
-    font-style: italic;
-    text-decoration: underline;
-}
-
-nav > li {
-    font-size: 15px;
-    padding: 10px;
-}

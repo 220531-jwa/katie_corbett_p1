@@ -1,0 +1,19 @@
+nav {
+    font-family: 'Bree Serif', serif;
+    background-color: darkolivegreen;
+    text-align: center;
+    border-color: black;
+    border-style: double;
+    border-width: 5px;
+    float: left;
+}
+
+nav > p {
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+nav > li {
+    font-size: 15px;
+}

@@ -17,12 +17,12 @@ public class User {
         this.usertype = usertype;
     }
 
-//    public void setUser_id(int user_id){
-//        this.user_id = user_id;
-//    }
-//    public int getUser_id(){
-//        return this.user_id;
-//    }
+    public void setUser_id(int user_id){
+        this.user_id = user_id;
+    }
+    public int getUser_id(){
+        return this.user_id;
+    }
 
 //    public void setUsername(String username){
 //        this.username = username;

@@ -47,7 +47,8 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof")
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
                 );
             }
         } catch(SQLException e){
@@ -78,7 +79,9 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof"));
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
+                );
                 allRequests.add(r);
             }
             return allRequests;
@@ -111,7 +114,9 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof"));
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
+                );
                 allRequests.add(r);
             }
             return allRequests;
@@ -144,7 +149,8 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof")
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
                 );
             }
         } catch(SQLException e){
@@ -177,7 +183,8 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof")
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
                 );
             }
         } catch(SQLException e){
@@ -210,7 +217,42 @@ public class RequestsDAO {
                         rs.getString("request_justification"),
                         rs.getInt("gradetype"),
                         rs.getInt("status"),
-                        rs.getString("proof")
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
+                );
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Requests setReimburseAmt(float reimburseamt, int user_id, int request_id){
+        String sql = "update requests set reimburseamt = ? where user_id = ? and request_id = ? returning *;";
+
+        try(Connection connect = cu.getConnection()){
+            PreparedStatement ps = connect.prepareStatement(sql);
+            ps.setFloat(1, reimburseamt);
+            ps.setInt(2, user_id);
+            ps.setInt(3, request_id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Requests( rs.getInt("request_id"),
+                        rs.getInt("user_id"),
+                        rs.getString("employee_first_name"),
+                        rs.getString("employee_last_name"),
+                        rs.getString("request_date"),
+                        rs.getString("request_time"),
+                        rs.getInt("trainingtype"),
+                        rs.getString("description"),
+                        rs.getFloat("request_cost"),
+                        rs.getString("request_justification"),
+                        rs.getInt("gradetype"),
+                        rs.getInt("status"),
+                        rs.getString("proof"),
+                        rs.getFloat("reimburseamt")
                 );
             }
         } catch(SQLException e){

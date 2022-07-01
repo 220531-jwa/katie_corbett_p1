@@ -1,3 +1,5 @@
+package dev.corbett.services;
+
 import dev.corbett.Models.User;
 import dev.corbett.Repos.UserDAO;
 import dev.corbett.Services.UserService;

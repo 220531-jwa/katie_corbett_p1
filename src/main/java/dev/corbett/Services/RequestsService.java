@@ -39,4 +39,8 @@ public class RequestsService {
     public Requests updateRequestStatus(int user_id, int request_id, int status){
         return rd.updateRequestStatus(user_id, request_id, status);
     }
+
+    public Requests setReimburseAmt(float reimburseamt, int user_id, int request_id){
+        return rd.setReimburseAmt(reimburseamt, user_id, request_id);
+    }
 }

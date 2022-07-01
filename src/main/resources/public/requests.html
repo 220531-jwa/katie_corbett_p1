@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Employee requests page
+            Employee can view requests. 
+        -->
+        <script src="employee.js"></script>
+        <link rel="stylesheet" href="tablestyles.css">
+        <link rel="stylesheet" href="commonstyles.css">
+        <link rel="stylesheet" href="navbarstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>ERS - Employee Reimbursement System</header>
+        <nav>
+            <p>Navigation:</p>
+                <li><a href="requests.html">View Requests</a></li>
+                <li><a href="submit.html">Submit Request</a></li>
+                <li><a href="addGrade.html">Update Request</a></li>
+            </ul>
+        </nav>
+        <h1>View All Requests:</h1>
+        <div id="requests">
+            <button type="button" class="btn btn-primary" onclick="createTable()" id="view">View Requests</button>
+            <table id="requestsTable">
+            </table>
+        </div>
+    </body>
+    <footer>
+        <p>&copy; Katie Corbett 2022</p>
+    </footer>
+</html>

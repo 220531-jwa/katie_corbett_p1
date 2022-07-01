@@ -6,23 +6,25 @@
             Contains links to submit a request, update a request, and view requests
         -->
         <link rel="stylesheet" href="commonstyles.css">
+        <link rel="stylesheet" href="homepagestyle.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body onload="runsetup()">
         <header>ERS - Employee Reimbursement System</header>
         <div><strong>Welcome!</strong></div>
         <nav>
             <p>Navigation:</p>
-                <li>View Requests</li>
-                <li><a href="submit.html">Submit Request</a></li>
-                <li>Update Request</li>
+            <li><a href="requests.html">View Requests</a></li>
+            <li><a href="submit.html">Submit Request</a></li>
+            <li><a href="addGrade.html">Update Request</a></li>
             </ul>
         </nav>
         
         </div>
     </body>
+    <script src="employee.js"></script>
     <footer>
         <p>&copy; Katie Corbett 2022</p>
     </footer>
