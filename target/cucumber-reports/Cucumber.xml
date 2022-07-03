@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="0.168">
+    <testcase classname="An employee can log in." name="An employee can log in" time="0.014">
+        <system-out><![CDATA[Given the employee is on the login page.....................................passed
+When the employee enters their correct credentials..........................passed
+Then the employee is taken to the employee homepage.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="An employee can submit a reimbursement request" name="An employee is submitting a reimbursement request" time="0.004">
+        <failure message="The scenario has pending or undefined step(s)" type="io.cucumber.java.PendingException"><![CDATA[Given the employee is on the submit page....................................pending
+When the employee enters all information and hits "Submit"..................skipped
+Then the webpage shows the request in a table...............................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="A finance manager can log in" name="A finance manager is logging in" time="0.003">
+        <failure message="The scenario has pending or undefined step(s)" type="io.cucumber.java.PendingException"><![CDATA[Given the finance manager is on the login page..............................pending
+When the finance manager enters their correct credentials...................skipped
+Then the finance manager is taken to the finance manager homepage...........skipped
+]]></failure>
+    </testcase>
+</testsuite>

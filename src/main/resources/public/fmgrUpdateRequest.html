@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Employee requests page
+            Employee can view requests. 
+        -->
+        <script src="financemgr.js"></script>
+        <link rel="stylesheet" href="tablestyles.css">
+        <link rel="stylesheet" href="commonstyles.css">
+        <link rel="stylesheet" href="navbarstyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>ERS - Employee Reimbursement System</header>
+        <nav>
+            <p>Navigation:</p>
+                <li><a href="fmgrViewRequests.html">View Requests</a></li>
+                <li><a href="fmgrChangeRequest.html">Change Request Status</a></li>
+                <li><a href="fmgrUpdateRequest.html">Update Reimbursement Amount</a></li>
+            </ul>
+        </nav>
+        <h1>Update Reimbursement Amount:</h1>
+        <div id="reimburseUpdate">
+            <label id="request_id">
+                Request ID number:
+                <input class="form-control" id="rid" type="text">
+            </label>
+            <br>
+            <label id="user_id">
+                User ID number:
+                <input class="form-control" id="uid" type="text">
+            </label>
+            <br>
+            <label id="amount">
+                Amount: 
+                <input class="form-control" id="amt" type="number">
+            </label>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="updateReimburseAmt()" id="change">Change Amount</button>
+            <div id="changeConfirm"></div>
+        </div>
+    </body>
+    <footer>
+        <p>&copy; Katie Corbett 2022</p>
+    </footer>
+</html>

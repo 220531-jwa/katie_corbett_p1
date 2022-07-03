@@ -50,6 +50,9 @@ public class ersapi {
                             path("/{request_id}", () -> {
                                 get(RequestsController::getRequestById);
                                 put(RequestsController::updateRequestStatus);
+                                path("/reimburse", () -> {
+                                    put(RequestsController::setReimburseAmount);
+                                });
                             });
                         });
                     });

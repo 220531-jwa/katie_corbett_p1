@@ -1,15 +1,9 @@
 let baseURL = "http://localhost:8080/financemgr";
 
-var user = JSON.parse(sessionStorage.getItem("user"));
-function runsetup(){
-    console.log(user);
-}
 
 async function createTable(){
     document.getElementById('view').style.display='none';
     console.log("create table has been called");
-    //get user ID 
-    let user_id = user.user_id;
     //send user ID + GET request
     let res = await fetch(
         `${baseURL}/fmrequests`, 
@@ -51,4 +45,72 @@ async function createTable(){
         .catch((error) => {
             console.log(error);
         });
+}
+
+async function changeStatus(){
+    console.log("Change status button pressed");
+    let rid = document.getElementById('rid').value;
+    let uid = document.getElementById('uid').value;
+    let num = document.getElementById('num').value;
+
+    let request = {
+        status: num
+    }
+    console.log(request);
+
+    let requestJson = JSON.stringify(request);
+    console.log(requestJson);
+
+    let res = await fetch(
+        `${baseURL}/fmrequests/${uid}/${rid}`, 
+        {
+            method: 'PUT',
+            header: {'Content-Type': 'application/JSON'},
+            body: requestJson
+        }
+    );
+
+    let resJson = await res.json()
+    .then((resp) => {
+        console.log(resp);
+        document.getElementById('changeConfirm').innerHTML = "change committed successfully";
+    })
+    .catch((error) => {
+        console.log(error);
+        document.getElementById('changeConfirm').innerHTML = "change not committed";
+    });
+}
+
+async function updateReimburseAmt(){
+    console.log("Change amount button pressed");
+    let rid = document.getElementById('rid').value;
+    let uid = document.getElementById('uid').value;
+    let amt = document.getElementById('amt').value;
+
+    let request = {
+        reimburseamt: amt
+    }
+    console.log(request);
+
+    let requestJson = JSON.stringify(request);
+    console.log(requestJson);
+
+    let res = await fetch(
+        `${baseURL}/fmrequests/${uid}/${rid}/reimburse`, 
+        {
+            method: 'PUT',
+            header: {'Content-Type': 'application/JSON'},
+            body: requestJson
+        }
+    );
+
+    let resJson = await res.json()
+    .then((resp) => {
+        console.log(resp);
+        document.getElementById('changeConfirm').innerHTML = "change committed successfully";
+    })
+    .catch((error) => {
+        console.log(error);
+        document.getElementById('changeConfirm').innerHTML = "change not committed";
+    });
 }

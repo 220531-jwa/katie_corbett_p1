@@ -8,13 +8,13 @@
         <link rel="stylesheet" href="commonstyles.css">
         <link rel="stylesheet" href="tablestyles.css">
         <link rel="stylesheet" href="navbarstyles.css">
-        <script src="employee.js"></script>
+        <script src="employee.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
         <header>ERS - Employee Reimbursement System</header>
-        <div><strong>Edit a Request:</strong></div>
+        <div><strong>Update a Request:</strong></div>
         <nav>
             <p>Navigation:</p>
             <li><a href="requests.html">View Requests</a></li>
@@ -22,33 +22,27 @@
             <li><a href="addGrade.html">Update Request</a></li>
             </ul>
         </nav>
-            <div id="prompt" onload="populateRequestID()">
-                <p id="selectRequest">Please select the request you would like to edit:</p>
-                <select type="requestID">
-                    <option value="1">TEST</option>
-                </select>
-                <br>
-                <button type="button" class="btn btn-primary" onclick="chooseRequest()" id="view">Submit</button>
-                <br>
-                <table>
-                    <!--this will show the request as it currently is-->
-                </table>
-                <br>
-                <p id="selectField" hidden>Please select which field you would like to update:</p>
-                <select id="field" hidden>
-                    <option value="1">First Name</option>
-                    <option value="2">Last Name</option>
-                    <option value="3">Date</option>
-                    <option value="4">Time</option>
-                    <option value="5">Type</option>
-                    <option value="6">Description</option>
-                    <option value="7">Cost</option>
-                    <option value="8">Justification</option>
-                    <option value="9">Type of Grade</option>
-                    <option value="10">Proof</option>
-                </select>
-                <button type="button" class="btn btn-primary" onclick="chooseRequest()" id="view">Submit</button>
-            </div>
+        <button type="button" class="btn btn-primary" onclick="createTable()" id="view">Show all requests</button>
+        <br>
+        <table id="requestsTable"></table>
+        <p><strong>Enter information:</strong></p>
+        <br>
+        <label id="request_id">
+            Request ID number:
+            <input class="form-control" id="rid" type="text">
+        </label>
+        <br>
+        <label id="user_id">
+            User ID number:
+            <input class="form-control" id="uid" type="text">
+        </label>
+        <br>
+        <label id="proof">
+            Proof: 
+            <input class="form-control" id="grade" type="text">
+        </label>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="submitChanges()">Submit changes</button>
         </div>
     </body>
     <footer>

@@ -111,32 +111,36 @@ async function createTable(){
         });
 }
 
-async function populateRequestID(){
-    let user_id = user.user_id;
-    console.log(user_id);
+async function submitChanges(){
+    console.log("submit changes button pressed");
+    let rid = document.getElementById('rid').value;
+    let uid = document.getElementById('uid').value;
+    let grade = document.getElementById('grade').value;
+
+    let request = {
+        proof: grade
+    }
+    console.log(request);
+
+    let requestJson = JSON.stringify(request);
+    console.log(requestJson);
+
     let res = await fetch(
-        `${baseURL}/requests/${user_id}`, 
+        `${baseURL}/requests/${uid}/${rid}`, 
         {
-            method : 'GET', 
-            header: {'Content-Type': 'application/json'}
+            method: 'PUT',
+            header: {'Content-Type': 'application/JSON'},
+            body: requestJson
         }
     );
+
     let resJson = await res.json()
     .then((resp) => {
         console.log(resp);
+        window.location.assign("requestSubmit.html");
     })
     .catch((error) => {
         console.log(error);
-    })
-}
-
-async function chooseRequest(){
-    console.log("test");
-    document.getElementById('selectField').style.display='visible';
-    document.getElementById('field').style.display='visible';
-    let user_id = user.user_id;
-    let request_id = document.getElementById('requestID').value;
-    console.log(user_id);
-    console.log(request_id);
-
+        window.location.assign("requestNotSubmit.html");
+    });
 }

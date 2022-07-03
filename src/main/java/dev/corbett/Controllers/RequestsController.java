@@ -76,6 +76,7 @@ public class RequestsController {
         int request_id = Integer.parseInt(ctx.pathParam("request_id"));
         Requests r = ctx.bodyAsClass(Requests.class);
         String proof = r.getProof();
+
         Requests updated = null;
         try{
             updated = rs.updateRequestGrade(request_id, user_id, proof);
@@ -104,4 +105,17 @@ public class RequestsController {
         }
     }
 
+    public static void setReimburseAmount(Context ctx){
+        int user_id = Integer.parseInt(ctx.pathParam("user_id"));
+        int request_id = Integer.parseInt(ctx.pathParam("request_id"));
+        Requests r = ctx.bodyAsClass(Requests.class);
+        float reimburse = r.getReimburseamt();
+        Requests updated = rs.setReimburseAmt(reimburse, user_id, request_id);
+        if(updated != null){
+            ctx.status(200);
+            ctx.json(updated);
+        } else {
+            ctx.status(404);
+        }
+    }
 }
