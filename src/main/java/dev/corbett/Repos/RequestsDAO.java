@@ -1,7 +1,10 @@
 package dev.corbett.Repos;
 
+import dev.corbett.Controllers.RequestsController;
 import dev.corbett.Models.Requests;
 import dev.corbett.Utils.ConnectionUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RequestsDAO {
+    private static Logger log = LogManager.getLogger(RequestsDAO.class);
     private static ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
 
     public Requests createRequest(int user_id, String employee_first_name,

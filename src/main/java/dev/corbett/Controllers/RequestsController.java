@@ -3,9 +3,13 @@ package dev.corbett.Controllers;
 import dev.corbett.Models.Requests;
 import dev.corbett.Services.RequestsService;
 import io.javalin.http.Context;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 
 public class RequestsController {
+    private static Logger log = LogManager.getLogger(RequestsController.class);
     private static RequestsService rs;
     public RequestsController(RequestsService rs){
         this.rs = rs;

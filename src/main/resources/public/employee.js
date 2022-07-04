@@ -46,14 +46,14 @@ async function submitRequest(){
     );
 
     let resJson = await res.json()
-        .then((resp) => {
-            console.log(resp);
-            window.location.assign("requestSubmit.html");
-        })
-        .catch((error) => {
-            console.log(error);
-            window.location.assign("requestNotSubmit.html");
-        });
+    .then((resp) => {
+        console.log(resp);
+        document.getElementById('changeConfirm').innerHTML = "change committed successfully";
+    })
+    .catch((error) => {
+        console.log(error);
+        document.getElementById('changeConfirm').innerHTML = "change not committed";
+    });
 }
 
 function resubmitRequest(){
@@ -64,6 +64,7 @@ function backToHp(){
 }
 
 async function createTable(){
+    document.getElementById('requestsTable').style.display='block';
     document.getElementById('view').style.display='none';
     console.log("create table has been called");
     //get user ID 
@@ -137,10 +138,10 @@ async function submitChanges(){
     let resJson = await res.json()
     .then((resp) => {
         console.log(resp);
-        window.location.assign("requestSubmit.html");
+        document.getElementById('changeConfirm').innerHTML = "change committed successfully";
     })
     .catch((error) => {
         console.log(error);
-        window.location.assign("requestNotSubmit.html");
+        document.getElementById('changeConfirm').innerHTML = "change not committed";
     });
 }

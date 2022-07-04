@@ -1,21 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="0.168">
-    <testcase classname="An employee can log in." name="An employee can log in" time="0.014">
-        <system-out><![CDATA[Given the employee is on the login page.....................................passed
-When the employee enters their correct credentials..........................passed
-Then the employee is taken to the employee homepage.........................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="16" time="8.764">
+    <testcase classname="Changing a grade" name="an Employee adds their proof" time="0.399">
+        <system-out><![CDATA[Given an Employee is on the Update Request page.............................passed
+When the Employee enters their "2" and their "2" and their "pass" and clicks Submit Changes.passed
+Then the Employee sees the Success message..................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="An employee can submit a reimbursement request" name="An employee is submitting a reimbursement request" time="0.004">
-        <failure message="The scenario has pending or undefined step(s)" type="io.cucumber.java.PendingException"><![CDATA[Given the employee is on the submit page....................................pending
-When the employee enters all information and hits "Submit"..................skipped
-Then the webpage shows the request in a table...............................skipped
-]]></failure>
+    <testcase classname="Changing a grade" name="an Employee adds their proof 2" time="0.21">
+        <system-out><![CDATA[Given an Employee is on the Update Request page.............................passed
+When the Employee enters their "6" and their "6" and their "pass" and clicks Submit Changes.passed
+Then the Employee sees the Success message..................................passed
+]]></system-out>
     </testcase>
-    <testcase classname="A finance manager can log in" name="A finance manager is logging in" time="0.003">
-        <failure message="The scenario has pending or undefined step(s)" type="io.cucumber.java.PendingException"><![CDATA[Given the finance manager is on the login page..............................pending
-When the finance manager enters their correct credentials...................skipped
-Then the finance manager is taken to the finance manager homepage...........skipped
-]]></failure>
+    <testcase classname="User login" name="The Employee can log in with their credentials" time="0.718">
+        <system-out><![CDATA[Given an Employee is on the login page......................................passed
+When the Employee types in their "beaulionettm9" and "thaddeus" and clicks the Login button.passed
+Then the Employee should be on the Employee Homepage........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User login" name="The Employee can log in with their credentials 2" time="0.643">
+        <system-out><![CDATA[Given an Employee is on the login page......................................passed
+When the Employee types in their "yashanydoorinm9" and "stormlord" and clicks the Login button.passed
+Then the Employee should be on the Employee Homepage........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User login" name="The Employee can log in with their credentials 3" time="0.676">
+        <system-out><![CDATA[Given an Employee is on the login page......................................passed
+When the Employee types in their "jesterlavorrem9" and "sprinkle" and clicks the Login button.passed
+Then the Employee should be on the Employee Homepage........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Submitting requests" name="the Employee can submit a request" time="0.492">
+        <system-out><![CDATA[Given an Employee is on the Submit Requests page............................passed
+When the Employee enters their "7" and their "Veth" and their "Brenatto" and their "7/3/2022" and their "4:46 PM" and their "5" and their "Crossbow Training" and their "30" and their "Better aim" and their "1" and clicks the Submit button.passed
+Then the Employee should see the Successful Submit message..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Submitting requests" name="the Employee can submit a request 2" time="0.456">
+        <system-out><![CDATA[Given an Employee is on the Submit Requests page............................passed
+When the Employee enters their "5" and their "Caduceus" and their "Clay" and their "7/3/2022" and their "4:48 PM" and their "6" and their "Tea Preparation" and their "20" and their "Tea" and their "1" and clicks the Submit button.passed
+Then the Employee should see the Successful Submit message..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Viewing requests" name="_2" time="0.113">
+        <system-out><![CDATA[Given an Employee is on the View Requests page..............................passed
+When the Employee clicks on the View Requests button........................passed
+Then the Employee can see all requests they have submitted..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Change reimbursement amount" name="the Finance Manager changes the Reimbursement Amount" time="0.188">
+        <system-out><![CDATA[Given a Finance Manager is on the Update Reimbursement Amount page..........passed
+When the Finance Manager enters the "2", "2", and "40500" and clicks submit.passed
+Then the Finance Manager sees the Success message...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Change reimbursement amount" name="the Finance Manager changes the Reimbursement Amount 2" time="0.162">
+        <system-out><![CDATA[Given a Finance Manager is on the Update Reimbursement Amount page..........passed
+When the Finance Manager enters the "1", "1", and "240" and clicks submit...passed
+Then the Finance Manager sees the Success message...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Change request status" name="the Finance Manager changes the Request Status" time="0.209">
+        <system-out><![CDATA[Given a Finance Manager is on the Change Request Status page................passed
+When the Finance Manager enters the "2", "2", and "5" and clicks the submit button.passed
+Then the Finance Manager sees a message of Success..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Change request status" name="the Finance Manager changes the Request Status 2" time="0.189">
+        <system-out><![CDATA[Given a Finance Manager is on the Change Request Status page................passed
+When the Finance Manager enters the "4", "3", and "1" and clicks the submit button.passed
+Then the Finance Manager sees a message of Success..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User login" name="The Finance Manager can log in with their credentials" time="0.653">
+        <system-out><![CDATA[Given a Finance Manager is on the login page................................passed
+When the Finance Manager types in their "thetraveler" and "chaos" and clicks the Login button.passed
+Then the Finance Manager should be on the Finance Manager Homepage..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User login" name="The Finance Manager can log in with their credentials 2" time="0.664">
+        <system-out><![CDATA[Given a Finance Manager is on the login page................................passed
+When the Finance Manager types in their "pumatsol" and "vagrant" and clicks the Login button.passed
+Then the Finance Manager should be on the Finance Manager Homepage..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User login" name="The Finance Manager can log in with their credentials 3" time="1.173">
+        <system-out><![CDATA[Given a Finance Manager is on the login page................................passed
+When the Finance Manager types in their "orlyskiffback" and "navigator" and clicks the Login button.passed
+Then the Finance Manager should be on the Finance Manager Homepage..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Viewing requests" name="_2" time="0.081">
+        <system-out><![CDATA[Given a Finance Manager is on the Finance Manager View Requests page........passed
+When the Finance Manager clicks on the View Requests button.................passed
+Then the Finance Manager can see all requests that have been submitted......passed
+]]></system-out>
     </testcase>
 </testsuite>

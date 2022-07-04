@@ -1,11 +1,15 @@
 package dev.corbett.Services;
 
+import dev.corbett.Controllers.RequestsController;
 import dev.corbett.Models.Requests;
 import dev.corbett.Repos.RequestsDAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 public class RequestsService {
+    private static Logger log = LogManager.getLogger(RequestsService.class);
     private static RequestsDAO rd;
     public RequestsService(RequestsDAO rd){
         this.rd = rd;

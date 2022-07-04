@@ -1,9 +1,13 @@
 package dev.corbett.Services;
 
+import dev.corbett.Controllers.RequestsController;
 import dev.corbett.Models.User;
 import dev.corbett.Repos.UserDAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class UserService {
+    private static Logger log = LogManager.getLogger(UserService.class);
     private static UserDAO ud;
     public UserService(UserDAO ud){
         this.ud = ud;

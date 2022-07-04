@@ -5,6 +5,7 @@
             Employee requests page
             Employee can view requests. 
         -->
+        <title>ERS Employee View Requests</title>
         <script src="employee.js"></script>
         <link rel="stylesheet" href="tablestyles.css">
         <link rel="stylesheet" href="commonstyles.css">
@@ -25,7 +26,7 @@
         <h1>View All Requests:</h1>
         <div id="requests">
             <button type="button" class="btn btn-primary" onclick="createTable()" id="view">View Requests</button>
-            <table id="requestsTable">
+            <table id="requestsTable" hidden>
             </table>
         </div>
     </body>

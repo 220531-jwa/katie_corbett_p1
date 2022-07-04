@@ -6,6 +6,8 @@ import dev.corbett.Services.RequestsService;
 import dev.corbett.Services.UserService;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import static io.javalin.apibuilder.ApiBuilder.path;
@@ -15,6 +17,7 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 import static io.javalin.apibuilder.ApiBuilder.put;
 
 public class ersapi {
+    private static Logger log = LogManager.getLogger(ersapi.class);
     public static void main(String[] args) {
         UserController uc = new UserController(new UserService(new UserDAO()));
         RequestsController rc = new RequestsController(new RequestsService(new RequestsDAO()));

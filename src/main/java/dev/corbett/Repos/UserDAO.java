@@ -1,7 +1,10 @@
 package dev.corbett.Repos;
 
+import dev.corbett.Controllers.RequestsController;
 import dev.corbett.Models.User;
 import dev.corbett.Utils.ConnectionUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
+    private static Logger log = LogManager.getLogger(UserDAO.class);
     private static ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
 
     public User getUserById(int user_id){
